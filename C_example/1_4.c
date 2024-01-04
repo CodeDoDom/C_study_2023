@@ -17,7 +17,6 @@ int MenuSelect()
 	int bread_cost = 500, snack_cost = 700, drink_cost = 400;
 
 	printf("현재 당신이 소유하고 있는 금액: %d원\n", money);
-	//scanf("%d", &money);
 
 	for (int i = 1; i < 7; i++)
 	{
