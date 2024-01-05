@@ -1,33 +1,33 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int PrimeNumber();
+int PrimeNumber(int);
 
 int main(void)
 {
-	PrimeNumber();
+	int cnt = 0;
+	int num = 2;
+
+	while (cnt < 10)
+	{
+		if (PrimeNumber(num))
+		{
+			printf("소수: %d\n", num);
+			cnt++;
+		}
+		num++;
+	}
 
 	return 0;
 }
 
-int PrimeNumber()
+int PrimeNumber(int num)
 {
-	for (int i = 0; i < 10; i++)
+	for (int i = 2; i * i <= num; i++)
 	{
-		int num = 3;
-
-		for (int j = 1; j < num; j++)
-		{
-			for (int k = 1; k < num; k++)
-			{
-				if (j * k == num)
-				{
-					printf("%d 소수임\n", num);
-
-					break;
-				}
-			}
-		}
-		num++;
+		if (num % i == 0)
+			return 0;
 	}
+
+	return 1;
 }
