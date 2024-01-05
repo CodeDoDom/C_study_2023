@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int Number(int n)
+int Number1(int n)
 {
 	int res = 1;
 
@@ -11,6 +11,17 @@ int Number(int n)
 	}
 
 	printf("2ÀÇ %dÁ¦°öÀº %d\n", n, res);
+}
+
+int Number2(int n)
+{
+	int m;
+
+	// 2ÀÇ kÁ¦°öÀº n
+	/*while (n % 2 < 2)
+	{
+		m = n % 2;
+	}*/
 }
 
 int main()
