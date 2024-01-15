@@ -7,8 +7,6 @@ int main(void)
 	int* ptr = &arr[4];
 	int tot = 0;
 
-	printf("%d ", *ptr);
-
 	for (int i = 0; i < 5; i++)
 		tot += *ptr--;
 
