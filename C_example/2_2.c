@@ -3,13 +3,16 @@
 
 void TEMPBinaryNum(int num)
 {
-	if (num % 2 == 0)
-		printf("0 ");
-	else
-		printf("1 ");
-
 	if (num > 0)
+	{
+		if (num % 2 == 0)
+			printf("0 ");
+		else
+			printf("1 ");
+		
+
 		TEMPBinaryNum(num / 2);
+	}
 }
 
 void BinaryNum(int num)
