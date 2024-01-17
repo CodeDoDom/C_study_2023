@@ -9,7 +9,6 @@ void TEMPBinaryNum(int num)
 			printf("0 ");
 		else
 			printf("1 ");
-		
 
 		TEMPBinaryNum(num / 2);
 	}
