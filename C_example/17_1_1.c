@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-void MaxAndMin(int arr[], int len, int** maxPtr, int** minPtr);
+void MaxAndMin(int* arr, int len, int** maxPtr, int** minPtr);
 
 int main(void)
 {
