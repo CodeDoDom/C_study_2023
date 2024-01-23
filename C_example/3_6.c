@@ -10,14 +10,32 @@ int main(void)
 {
 	srand((int)time(NULL));
 
+	int strike = 0, ball = 0, cnt = 0;
 	int* pcs = ComputerTurn();
 
-	while (1)
+	printf("GAME START!\n\n");
+
+	while (strike != 3)
 	{
+		strike = 0, ball = 0;
 		int* players = PlayerTurn();
+		cnt++;
 
+		for (int i = 0; i < 3; i++)
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				if (players[i] == pcs[j] && i == j)
+					strike++;
 
+				else if (players[i] == pcs[j] && i != j)
+					ball++;
+			}
+		}
+		printf("%d번째 도전 결과: %d strike, %d ball!!\n\n", cnt, strike, ball);
 	}
+
+	printf("GAME OVER!\n");
 
 	return 0;
 }
