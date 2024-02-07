@@ -12,19 +12,15 @@ int main(void)
 	fgets(str, 100, fp);
 	fputs(str, stdout);
 	printf("파일의 크기: %ld\n", GetFileSize(fp));
-
 	fgets(str, 100, fp);
 	fputs(str, stdout);
 	printf("파일의 크기: %ld\n", GetFileSize(fp));
-
 	fgets(str, 100, fp);
 	fputs(str, stdout);
 	printf("파일의 크기: %ld\n", GetFileSize(fp));
-
 	fgets(str, 100, fp);
 	fputs(str, stdout);
 	printf("파일의 크기: %ld\n", GetFileSize(fp));
-
 	fgets(str, 100, fp);
 	fputs(str, stdout);
 
