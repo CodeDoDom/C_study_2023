@@ -4,30 +4,50 @@
 
 typedef struct complexnum
 {
-	double n1;
-	double n2;
+	double real;
+	double img;
 } ComNum;
+
+ComNum Add(ComNum c1, ComNum c2);
+ComNum Mul(ComNum c1, ComNum c2);
+void ShowRes(ComNum c);
 
 int main(void)
 {
-	ComNum* list[2];
+	ComNum c1, c2;
 
-	for (int i = 0; i < 2; i++)
-	{
-		ComNum* num = (ComNum*)malloc(sizeof(ComNum) * 1);
+	printf("복소수 입력1[실수 허수]: ");
+	scanf("%lf %lf", &c1.real, &c1.img);
 
-		printf("복소수 입력%d [실수 허수]: ", i + 1);
-		scanf("%lf %lf", &(num->n1), &(num->n2));
+	printf("복소수 입력2[실수 허수]: ");
+	scanf("%lf %lf", &c2.real, &c2.img);
 
-		list[i] = num;
-	}
+	printf("합의 결과] ");
+	ShowRes(Add(c1, c2));
 
-	printf("복소수의 덧셈\n실수: %lf, 허수: %lf\n", (list[0]->n1) + (list[1]->n1), (list[0]->n2) + (list[1]->n2));
-	printf("복소수의 곱셈\n실수: %lf, 허수: %lf\n", (list[0]->n1) * (list[1]->n1) - (list[0]->n2) * (list[1]->n2),
-		(list[0]->n2) * (list[1]->n1) + (list[0]->n1) * (list[1]->n2));
-
-	for (int i = 0; i < 2; i++)
-		free(list[i]);
+	printf("곱의 결과] ");
+	ShowRes(Mul(c1, c2));
 
 	return 0;
+}
+
+ComNum Add(ComNum c1, ComNum c2)
+{
+	ComNum tmp;
+	tmp.real = c1.real + c2.real;
+	tmp.img = c1.img + c2.img;
+	return tmp;
+}
+
+ComNum Mul(ComNum c1, ComNum c2)
+{
+	ComNum tmp;
+	tmp.real = (c1.real * c2.real) - (c1.img * c2.img);
+	tmp.img = (c1.img * c2.real) + (c1.real * c2.img);
+	return tmp;
+}
+
+void ShowRes(ComNum c)
+{
+	printf("실수: %f, 허수: %f\n", c.real, c.img);
 }
